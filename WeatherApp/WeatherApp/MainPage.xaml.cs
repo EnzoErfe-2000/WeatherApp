@@ -13,6 +13,32 @@ namespace WeatherApp
         public MainPage()
         {
             InitializeComponent();
+            this.BindingContext = this;
         }
+
+        public List<Weather> Weathers
+        {
+            get => WeatherData();
+        }
+
+        private List<Weather> WeatherData()
+        {
+            var tempList = new List<Weather>();
+            tempList.Add(new Weather { Temp = "22", Date = "Sunday 16", Icon = "weather.png" });
+            tempList.Add(new Weather { Temp = "21", Date = "Monday 17", Icon = "weather.png" });
+            tempList.Add(new Weather { Temp = "20", Date = "Sunday 18", Icon = "weather.png" });
+            tempList.Add(new Weather { Temp = "12", Date = "Sunday 19", Icon = "weather.png" });
+            tempList.Add(new Weather { Temp = "17", Date = "Sunday 20", Icon = "weather.png" });
+            tempList.Add(new Weather { Temp = "20", Date = "Sunday 21", Icon = "weather.png" });
+            return tempList;
+        }
+    }
+
+    public class Weather
+    {
+        public string Temp { get; set; }
+        public string Date { get; set; }
+        public string Icon { get; set; }
+
     }
 }
